@@ -98,7 +98,7 @@ function Update-OhMyPosh {
     try {
         Write-Host "Checking for Oh-My-Posh updates..." -ForegroundColor Cyan
         $updateNeeded = $false
-        $currentVersion = $(oh-my-posh --version).ToString()
+        $currentVersion = $(oh-my-posh version).ToString()
         $gitHubApiUrl = "https://api.github.com/repos/JanDeDobbeleer/oh-my-posh/releases/latest"
         $latestReleaseInfo = Invoke-RestMethod -Uri $gitHubApiUrl
         $latestVersion = $latestReleaseInfo.tag_name.Trim('v')
